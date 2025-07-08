@@ -1,0 +1,137 @@
+Email:
+- Là nơi nhập email của người dùng
+- Refer to Validation Rule #1
+- Khi di chuột vào icon (i) >> hiển thị tool tip có nội dung sau:
+"- Maxlength là 320 kí tự.
+- Chỉ chấp nhận ký tự số và chữ cái.
+- Chỉ chấp nhận ký tự  (-), (_), (.), (@)
+- Không được phép nhập các ký tự trắng"
+- Nếu copy rồi paste các kí tư không hợp lệ thì sẽ hiện thị lỗi  [MSG - lg25]
+- Email format: yourname@example.com"
+
+---->
+Email không tồn tại trong DB
+Email đúng định dạng: yourname@example.com"
+Email có maxlength <= 320 kí tự
+Email chỉ có kí tự số và chữ cái
+Email chấp nhận các kí tự : (-), (_), (.), (@)
+Email có space đầu cuối
+--->
+Valid:
+- Email không tồn tại trong DB, đúng định dạng và chứa cả số, chữ cái,có kí tự ((-), (_), (.), (@)) và <320 kí tự
+- Email không tồn tại trong DB, đúng định dạng và Chỉ chứa sô và <320 kí tự
+- Email không tồn tại trong DB, đúng định dạng và Chỉ chứa chữ cái và <320 kí tự 
+- [Email] không tồn tại trong DB, đúng định dạng và chỉ chứa kí tự cho phép: (-), (_), (.), (@) và <320 kí tự
+- Nhập space vào đầu cuối của Email
+- Nhập Họ tên với maxlength= 320 kí tự
+---> Invalid
+Email trống
+Email chứa kí tự trắng
+Email tồn tại trong DB
+Email không đúng định dạng 
+Email quá maxlength > 320 kí tự
+Email có chứa kí tự đặc biệt ngoài các kí tự  (-), (_), (.), (@)
+Copy và paste các kí tự không hợp lệ
+
+
+
+
+mã người dùng
+- Không tồn tại trong DB
+- Maxlength là 10 kí tự.
+- Chỉ chấp nhận ký tự số
+- Không được phép nhập các ký tự trắng
+- Không được phép nhập các ký tự đặc biệt
+- Không được phép nhập các chữ cái
+- Nếu copy rồi paste các kí tư không hợp lệ thì sẽ hiện thị lỗi  [MSG - lg25]
+
+---> Valid:
+- mã người dùng không tồn tại trong DB, chỉ chứa cả số và <10 kí tự
+- mã người dùng không tồn tại trong DB, chỉ chứa cả số và = 10 kí tự
+---> Invalid
+mã người dùng trống
+mã người dùng chứa kí tự trắng
+mã người dùng tồn tại trong DB
+mã người dùng chứa chữ cái
+mã chứa script : <script> alert = "abc" </script>
+mã chứa HTML <img href="picture.png"> hoặc <b> ThuBT </b>
+mã người dùng chứa emoji :>, :<
+mã người dùng quá maxlength > 10 kí tự
+mã người dùng có chứa kí tự đặc biệt
+mã người dùng chỉ chứa space
+Copy và paste các kí tự không hợp lệ
+
+
+env: paste link;
+
+env: dev
+
+step:
+
+Mở màn hình Danh sách người dùng
+
+Kiểm tra UI của DS người dùng
+
+actual:
+
+Sai column name Họ và tên => expected: Họ Tên
+
+Sai column name Xuất ra Excel => expected: Xuất File
+
+Sai column name  Ngày cập nhật => expected: Người Tạo
+
+Sai thông tin cột [Ngày cập nhật] => expected: xuất ra [Người Tạo]
+
+Thừa cột số thứ tự => expected: bỏ cột số thứ tự
+
+Sai column name  Xem, Sửa, Hoạt động/Không hoạt động => expected: Thao Tác
+
+Sai vị trí 2 button sửa xem =>  expected: Xem Sửa
+
+Thiếu button << và  >> => expected: Thêm button << và >>
+
+Sai Button name  Làm mới mật khẩu => expected: Reset Pass
+
+expected:
+
+Hiển thị đúng column name Họ Tên
+
+SHiển thị đúng column name Xuất File
+
+Hiển thị đúng column name Người Tạo
+
+Hiển thị đúng thông tin của cột [Người Tạo]
+
+Bỏ cột số thứ tự
+
+Hiển thị đúng column name Thao Tác
+
+Hiển thị đúng vị trí của 2 button Xem Sửa
+
+Hiển thị đúng column name Reset Pass
+
+Có button << trước button < và >> sau button >
+
+
+
+
+
+
+https://codestar.atlassian.net/browse/COD-7008
+
+
+
+COD-6909
+hpm catary search
+
+valid
+(1,15)
+chỉ chứa chữ và số
+
+invalid
+>15 kí tự
+để trống
+chỉ chứa space
+chứa kí tự đặc biệt
+
+name và code chứa emoji và chứa kí tự đặc bie
